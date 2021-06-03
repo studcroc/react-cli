@@ -1,0 +1,32 @@
+{
+  "name": "react-cli",
+  "version": "1.0.0",
+  "description": "A command line utility for react application development",
+  "main": "dist/bin/index.js",
+  "scripts": {
+    "start": "tsc && node dist/bin/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "rct": "./dist/bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hvg2416/react-cli.git"
+  },
+  "keywords": [
+    "cmd",
+    "react",
+    "cli-tool"
+  ],
+  "author": "Harsh Vardhan Gautam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hvg2416/react-cli/issues"
+  },
+  "homepage": "https://github.com/hvg2416/react-cli#readme",
+  "devDependencies": {
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  }
+}
