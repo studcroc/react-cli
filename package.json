@@ -2,13 +2,13 @@
   "name": "react-cli",
   "version": "1.0.0",
   "description": "A command line utility for react application development",
-  "main": "dist/bin/index.js",
+  "main": "build/bin/index.js",
   "scripts": {
-    "start": "tsc && node dist/bin/index.js",
+    "start": "tsc && node build/bin/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "rct": "./dist/bin/index.js"
+    "rct": "./build/bin/index.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,12 @@
   },
   "homepage": "https://github.com/hvg2416/react-cli#readme",
   "devDependencies": {
+    "@types/node": "^12.12.35",
+    "@types/yargs": "^17.0.0",
     "tslint": "^5.12.1",
     "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "yargs": "^17.0.1"
   }
 }
