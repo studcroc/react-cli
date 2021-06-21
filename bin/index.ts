@@ -9,9 +9,9 @@ import { ScaffoldReactAppParams } from "../src/models/scaffold_react_app_params"
 import { parseParams } from "../src/utils/parseParams";
 
 const options: any = yargs
-.command("cra", "Use this command to scaffold a new react application")
+.command("cra", "Use this command to scaffold a new react application (TYPESCRIPT template is default)")
 .command("gc", "Use this command to generate a new react component")
-.option("ts", { alias: "typescript", description: "Set this flag to true to scaffold new react application with typescript template", type: "boolean" })
+.option("js", { alias: "javascript", description: "Set this flag to true to scaffold new react application with javascript template", type: "boolean" })
 .argv;
 
 let params: RCTParams = parseParams(options);
@@ -20,7 +20,7 @@ let params: RCTParams = parseParams(options);
     if(options?._![0] === 'cra'){
         let scaffoldReactAppParams: ScaffoldReactAppParams = {
             applicationName: options?._![1],
-            ts: params.ts!,
+            js: params.js,
         };
         try {
             await scaffoldReactApp(scaffoldReactAppParams);
@@ -30,7 +30,7 @@ let params: RCTParams = parseParams(options);
     }else if(options?._![0] === 'gc'){
         let generateReactComponentParams: GenerateReactComponentParams = {
             componentName: options?._![1],
-            ts: params.ts!,
+            js: params.js,
         };
         try {
             await generateReactComponent(generateReactComponentParams);
