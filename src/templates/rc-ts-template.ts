@@ -2,7 +2,8 @@ import { GenerateReactComponentParams } from "../models/generateReactComponentPa
 
 export function getRCTSTemplate(params: GenerateReactComponentParams) {
 
-    return `import React from 'react';
+    if(params.css){
+        return `import React from 'react';
 import './${params.componentName}.css';
 
 type ${params.componentName}Props = {
@@ -14,4 +15,17 @@ export const ${params.componentName} = (props: ${params.componentName}Props) => 
         <></>
     );
 }`;
+    }else {
+        return `import React from 'react';
+
+type ${params.componentName}Props = {
+
+}
+
+export const ${params.componentName} = (props: ${params.componentName}Props) => {
+    return (
+        <></>
+    );
+}`;
+    }
 }
