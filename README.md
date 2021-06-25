@@ -11,7 +11,7 @@ rct helps you out with these kind of tasks by providing you simple to use comman
 ### Installation
 
 ```javascript
-  npm i react-cli-utility
+  npm i react-cli-utility -g
 ```
 
 ### Usage
