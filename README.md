@@ -1,12 +1,13 @@
 # React CLI
-
-## A NodeJS Command Line Utility to increase your productivity while working on a ReactJS project
+A NodeJS Command Line Utility to increase your productivity while working on a ReactJS project.
 
 ### Description
 
 React CLI (aka rct) helps you to automate the most obvious tasks which we as developers used to do manually such as creating a new component by making a separate folder & then making component's jsx or css files manually.
 
 rct helps you out with these kind of tasks by providing you simple to use command line tool.
+
+![React CLI Poster](https://raw.githubusercontent.com/hvg2416/react-cli/main/banner.png?token=ALZHXP4CPVF4S52FNE5HET3A35DU4)
 
 ### Installation
 
@@ -19,8 +20,7 @@ rct helps you out with these kind of tasks by providing you simple to use comman
 ```text rct [command]
 
 Commands:
-  rct cra  Use this command to scaffold a new react application (TYPESCRIPT
-           template is default)
+  rct cra  Use this command to scaffold a new react application (TYPESCRIPT template is default)
   rct gc   Use this command to generate a new react component
 
 Options:
