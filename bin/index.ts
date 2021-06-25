@@ -11,8 +11,8 @@ import { parseParams } from "../src/utils/parseParams";
 const options: any = yargs
 .command("cra", "Use this command to scaffold a new react application (TYPESCRIPT template is default)")
 .command("gc", "Use this command to generate a new react component")
-.option("css", { alias: "css_stylesheet", description: "Set this flag to true to scaffold new react component along with it's css style file", type: "boolean" })
 .option("js", { alias: "javascript", description: "Set this flag to true to scaffold new react application with javascript template", type: "boolean" })
+.option("css", { alias: "css_stylesheet", description: "Set this flag to true to scaffold new react component along with it's css style file", type: "boolean" })
 .argv;
 
 let params: RCTParams = parseParams(options);
