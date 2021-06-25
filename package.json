@@ -1,6 +1,6 @@
 {
   "name": "react-cli-utility",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A command line utility for react application development",
   "main": "build/bin/index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "cli-tool"
   ],
   "author": "Harsh Vardhan Gautam",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/hvg2416/react-cli/issues"
   },
