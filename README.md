@@ -8,6 +8,12 @@ React CLI (aka rct) helps you to automate the most obvious tasks which we as dev
 
 rct helps you out with these kind of tasks by providing you simple to use command line tool.
 
+### Installation
+
+```javascript
+  npm i react-cli-utility
+```
+
 ### Usage
 
 ```text rct [command]
