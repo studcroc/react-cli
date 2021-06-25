@@ -1,4 +1,5 @@
 # React CLI
+
 A NodeJS Command Line Utility to increase your productivity while working on a ReactJS project.
 
 ### Description
@@ -46,7 +47,7 @@ e.g.
 rct cra TodoApp
 ```
 
-#### Scaffolding a new React Component
+#### Generating a new React Component
 
 ```bin
 rct gc <component-name> [--js --css]
