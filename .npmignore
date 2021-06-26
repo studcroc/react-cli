@@ -1,4 +1,9 @@
-*
-
-!build
-!package.json
+/src
+/bin
+/.vscode
+banner.png
+README.md
+tsconfig.json
+tslint.json
+LICENSE
+.gitignore
