@@ -1,6 +1,6 @@
 {
   "name": "react-cli-utility",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A command line utility for react application development",
   "main": "build/bin/index.js",
   "scripts": {
