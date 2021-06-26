@@ -23,6 +23,11 @@ let params: RCTParams = parseParams(options);
             applicationName: options?._![1],
             js: params.js,
         };
+        
+        if(!scaffoldReactAppParams.applicationName){
+            return console.error('\nPlease pass a valid project name\n');
+        }
+
         try {
             await scaffoldReactApp(scaffoldReactAppParams);
         } catch (error) {
