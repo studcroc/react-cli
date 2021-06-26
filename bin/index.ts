@@ -7,6 +7,7 @@ import { GenerateReactComponentParams } from "../src/models/generateReactCompone
 import { RCTParams } from "../src/models/rct_params";
 import { ScaffoldReactAppParams } from "../src/models/scaffold_react_app_params";
 import { parseParams } from "../src/utils/parseParams";
+import validateInput from "../src/utils/validators/input.validator";
 
 const options: any = yargs
 .command("cra", "Use this command to scaffold a new react application (TYPESCRIPT template is default)")
@@ -24,7 +25,7 @@ let params: RCTParams = parseParams(options);
             js: params.js,
         };
         
-        if(!scaffoldReactAppParams.applicationName){
+        if(!scaffoldReactAppParams.applicationName || !validateInput(scaffoldReactAppParams.applicationName)){
             return console.error('\nPlease pass a valid project name\n');
         }
 
@@ -39,6 +40,11 @@ let params: RCTParams = parseParams(options);
             js: params.js,
             css: options.css,
         };
+
+        if(!generateReactComponentParams.componentName || !validateInput(generateReactComponentParams.componentName)){
+            return console.error('\nPlease pass a valid component name\n');
+        }
+
         try {
             await generateReactComponent(generateReactComponentParams);
         } catch (error) {

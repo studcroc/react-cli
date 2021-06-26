@@ -1,7 +1,5 @@
 export const transformIntoPascalCase = (componentName: string): string => {
 
-    if(!componentName) throw 'ERROR: Pass a component name';
-
     let l = componentName.length;
 
     let res = "";
@@ -11,8 +9,8 @@ export const transformIntoPascalCase = (componentName: string): string => {
         if(i == 0) ch = ch.toUpperCase();
         if(i !== 0 && i !== l - 1){
             let prevCh = componentName.charAt(i - 1);
-            if(ch === " " || ch === "-") continue;
-            if(prevCh === " " || prevCh === "-"){
+            if(ch === " " || ch === "-" || ch === "_") continue;
+            if(prevCh === " " || prevCh === "-" || prevCh === "_"){
                 ch = ch.toUpperCase();
             }
             res += ch;

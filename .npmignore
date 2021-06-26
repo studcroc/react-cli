@@ -1,4 +1,4 @@
-/src
-/bin
-/.vscode
-banner.png
+*
+
+!build
+!package.json
