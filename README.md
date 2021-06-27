@@ -44,7 +44,7 @@ rct cra <app-name> [--js]
 e.g.
 
 ```bin
-rct cra TodoApp
+rct cra todo-app
 ```
 
 #### Generating a new React Component
