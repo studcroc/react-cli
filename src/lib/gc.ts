@@ -1,21 +1,22 @@
 import { mkdirSync, writeFileSync } from "fs";
 import { chdir } from "process";
-import { GenerateReactComponentParams } from "../models/generateReactComponentParams";
+import { RCTParams } from "../models/rct_params";
 import { getRCTSTemplate } from "../templates/rc-ts-template";
-import { transformIntoPascalCase } from "../utils/transformComponentName";
+import { transformIntoPascalCase } from "../utils/transformers/pascalcase.transformer";
 
-const generateReactComponent = (params: GenerateReactComponentParams) => {
+const generateReactComponent = (params: RCTParams) => {
 
-  params.componentName = transformIntoPascalCase(params.componentName);
+  let componentName = transformIntoPascalCase(params.command.args[0]);
+  params.command.args[0] = componentName;
 
-  console.log(`Generating ${params.componentName}...`);
+  console.log(`Generating ${componentName}...`);
 
   return new Promise<String>((resolve, reject) => {
     try {
-        mkdirSync(`./${params.componentName}`);
-        chdir(`${params.componentName}`);
-        if(params.css) writeFileSync(`${params.componentName}.css`, "", {});
-        writeFileSync(`${params.componentName}.tsx`, getRCTSTemplate(params), {});
+        mkdirSync(`./${componentName}`);
+        chdir(`${componentName}`);
+        if(params.flags.css) writeFileSync(`${componentName}.css`, "", {});
+        writeFileSync(`${componentName}.tsx`, getRCTSTemplate(params), {});
         console.log(`Done`);
     } catch (error) {
         console.error(error);

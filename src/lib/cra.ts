@@ -1,11 +1,11 @@
 import { ChildProcess, exec } from "child_process";
-import { ScaffoldReactAppParams } from "../models/scaffold_react_app_params";
+import { RCTParams } from "../models/rct_params";
 
-const scaffoldReactApp = (params: ScaffoldReactAppParams) => {
+const scaffoldReactApp = (params: RCTParams) => {
   return new Promise<String>((resolve, reject) => {
     
     const chp: ChildProcess = exec(
-      `npx create-react-app ${params.applicationName} ${!params.js? '--template typescript': ""}`
+      `npx create-react-app ${params.command.args[0]} ${!params.flags.js? '--template typescript': ""}`
     );
     
     chp.stdout?.on("data", (msg: Buffer) => {

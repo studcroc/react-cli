@@ -1,16 +1,16 @@
-import { GenerateReactComponentParams } from "../models/generateReactComponentParams";
+import { RCTParams } from "../models/rct_params";
 
-export function getRCTSTemplate(params: GenerateReactComponentParams) {
+export function getRCTSTemplate(params: RCTParams) {
 
-    if(params.css){
+    if(params.flags.css){
         return `import React from 'react';
-import './${params.componentName}.css';
+import './${params.command.args[0]}.css';
 
-type ${params.componentName}Props = {
+type ${params.command.args[0]}Props = {
 
 }
 
-export const ${params.componentName} = (props: ${params.componentName}Props) => {
+export const ${params.command.args[0]} = (props: ${params.command.args[0]}Props) => {
     return (
         <></>
     );
@@ -18,11 +18,11 @@ export const ${params.componentName} = (props: ${params.componentName}Props) => 
     }else {
         return `import React from 'react';
 
-type ${params.componentName}Props = {
+type ${params.command.args[0]}Props = {
 
 }
 
-export const ${params.componentName} = (props: ${params.componentName}Props) => {
+export const ${params.command.args[0]} = (props: ${params.command.args[0]}Props) => {
     return (
         <></>
     );
