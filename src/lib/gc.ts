@@ -15,8 +15,11 @@ const generateReactComponent = (params: RCTParams) => {
     try {
         mkdirSync(`./${componentName}`);
         chdir(`${componentName}`);
+
         if(params.flags.css) writeFileSync(`${componentName}.css`, "", {});
-        writeFileSync(`${componentName}.tsx`, getRCTSTemplate(params), {});
+
+        writeFileSync(`${componentName}.${params.flags.js? "js": "tsx"}`, getRCTSTemplate(params), {});
+        
         console.log(`Done`);
     } catch (error) {
         console.error(error);
