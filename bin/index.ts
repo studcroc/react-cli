@@ -33,7 +33,7 @@ let params: RCTParams = parseParams(args);
 
 (async () => {
   if (params.command.name === "cra") {
-    if (params.command.args[0] || !validateInput(params.command.args[0])) {
+    if (!params.command.args[0] || !validateInput(params.command.args[0])) {
       return console.error("\nPlease pass a valid project name\n");
     }
 
