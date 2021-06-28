@@ -22,6 +22,7 @@ export function parseParams(args: any): RCTParams {
     flags: {
       js: false,
       css: false,
+      class: false,
       ...flags,
     },
   };

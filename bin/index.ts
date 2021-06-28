@@ -22,6 +22,11 @@ const args: any = yargs
     description:
       "Set this flag to true to scaffold new react component along with it's css style file",
     type: "boolean",
+  })
+  .option("class", {
+    description:
+      "Set this flag to true to scaffold new class based react component",
+    type: "boolean",
   }).argv;
 
 let params: RCTParams = parseParams(args);
