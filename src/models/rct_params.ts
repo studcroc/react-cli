@@ -5,6 +5,7 @@ export interface RCTParams {
 export interface RCTFlags {
     js: boolean,
     css: boolean,
+    class: boolean,
 }
 export interface RCTCommand {
     name: string,
