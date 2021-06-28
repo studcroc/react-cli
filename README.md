@@ -21,16 +21,19 @@ rct helps you out with these kind of tasks by providing you simple to use comman
 ```text rct [command]
 
 Commands:
-  rct cra  Use this command to scaffold a new react application (TYPESCRIPT template is default)
+  rct cra  Use this command to scaffold a new react application (TYPESCRIPT
+           template is default)
   rct gc   Use this command to generate a new react component
 
 Options:
-  --help                   Show help                                   [boolean]
-  --version                Show version number                         [boolean]
-  --js, --javascript       Set this flag to true to scaffold new react
-                           application with javascript template        [boolean]
-  --css, --css_stylesheet  Set this flag to true to scaffold new react component
-                           along with it's css style file              [boolean]
+  --help     Show help                                                 [boolean]
+  --version  Show version number                                       [boolean]
+  --js       Set this flag to true to scaffold new react application with
+             javascript template                                       [boolean]
+  --css      Set this flag to true to scaffold new react component along with
+             it's css style file                                       [boolean]
+  --class    Set this flag to true to scaffold new class based react component
+                                                                       [boolean]
 ```
 
 ### Examples
@@ -50,7 +53,7 @@ rct cra todo-app
 #### Generating a new React Component
 
 ```bin
-rct gc <component-name> [--js --css]
+rct gc <component-name> [--js --css --class]
 ```
 
 e.g.
