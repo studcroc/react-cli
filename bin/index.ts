@@ -4,8 +4,11 @@ import yargs from "yargs";
 import scaffoldReactApp from "../src/lib/cra";
 import generateReactComponent from "../src/lib/gc";
 import { RCTParams } from "../src/models/rct_params";
+import logger from "../src/utils/logger/logger";
 import { parseParams } from "../src/utils/parsers/rctParams.parser";
 import validateInput from "../src/utils/validators/input.validator";
+
+const { logError, logInfo, logSuccess } = logger;
 
 const args: any = yargs
   .command(
@@ -34,23 +37,23 @@ let params: RCTParams = parseParams(args);
 (async () => {
   if (params.command.name === "cra") {
     if (!params.command.args[0] || !validateInput(params.command.args[0])) {
-      return console.error("\nPlease pass a valid project name\n");
+      return logError("\nPlease pass a valid project name\n");
     }
 
     try {
       await scaffoldReactApp(params);
     } catch (error) {
-      console.error(error);
+      logError(`${error}`);
     }
   } else if (params.command.name === "gc") {
     if (!params.command.args[0] || !validateInput(params.command.args[0])) {
-      return console.error("\nPlease pass a valid component name\n");
+      return logError("\nPlease pass a valid component name\n");
     }
 
     try {
       await generateReactComponent(params);
     } catch (error) {
-      console.error(error);
+      logError(`${error}`);
     }
   } else {
     yargs.showHelp();

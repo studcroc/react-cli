@@ -3,7 +3,10 @@ import { chdir } from "process";
 import { RCTParams } from "../models/rct_params";
 import { getRCCCTemplate } from "../templates/rc-cc-template";
 import { getRCFCTemplate } from "../templates/rc-fc-template";
+import logger from "../utils/logger/logger";
 import { transformIntoPascalCase } from "../utils/transformers/pascalcase.transformer";
+
+const { logError, logInfo, logSuccess } = logger;
 
 const generateReactComponent = (params: RCTParams) => {
 
@@ -21,9 +24,11 @@ const generateReactComponent = (params: RCTParams) => {
 
         writeFileSync(`${componentName}.${params.flags.js? "js": "tsx"}`, params.flags.class? getRCCCTemplate(params): getRCFCTemplate(params), {});
         
-        console.log(`Done`);
+        logSuccess("Done");
+        resolve("Done");
     } catch (error) {
-        console.error(error);
+        logError(`${error}`);
+        reject(error);
     }
   });
 };

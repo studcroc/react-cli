@@ -1,5 +1,8 @@
 import { ChildProcess, exec } from "child_process";
 import { RCTParams } from "../models/rct_params";
+import logger from "../utils/logger/logger";
+
+const { logError, logInfo, logSuccess } = logger;
 
 const scaffoldReactApp = (params: RCTParams) => {
   return new Promise<String>((resolve, reject) => {
@@ -9,7 +12,7 @@ const scaffoldReactApp = (params: RCTParams) => {
     );
     
     chp.stdout?.on("data", (msg: Buffer) => {
-      console.log(msg.toString());
+      logInfo(msg.toString());
     });
     
     // Error handling for exceptions
@@ -19,7 +22,7 @@ const scaffoldReactApp = (params: RCTParams) => {
 
     // Error handling for exceptions
     chp.stderr?.on("data", (err) => {
-      console.log(err.toString());
+      logError(`${err}`);
     });
 
     
